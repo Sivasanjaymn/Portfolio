@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sanjay Mambadi Nachimuthu — Automotive & Electrical Systems Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Sanjay Mambadi Nachimuthu (Sivasanjay) — Automotive Engineer focused on diagnostics, electrical systems, and autonomy." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sanjay — Automotive & Electrical Systems Portfolio" />
+    <meta property="og:description" content="Projects, experience, and skills in automotive diagnostics, harness design, calibration, and robotics." />
+    <meta property="og:type" content="website" />
+
+    <!-- Tailwind via CDN (great for GitHub Pages / simple hosting). For production build, swap to Tailwind CLI. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            boxShadow: {
+              soft: "0 10px 30px rgba(0,0,0,0.10)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Subtle background grain */
+      .grain {
+        background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 0);
+        background-size: 18px 18px;
+        background-position: -5px -5px;
+      }
+
+      /* Reduce motion for accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+    <!-- Top gradient accent -->
+    <div class="pointer-events-none fixed inset-x-0 top-0 h-56 bg-gradient-to-b from-slate-100 to-transparent dark:from-slate-900"></div>
+
+    <!-- NAV -->
+    <header class="sticky top-0 z-40 backdrop-blur border-b border-slate-200/60 bg-white/75 dark:border-slate-800/60 dark:bg-slate-950/70">
+      <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <a href="#top" class="flex items-center gap-3">
+          <div class="h-9 w-9 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 grid place-items-center font-semibold shadow-soft">
+            SM
+          </div>
+          <div class="leading-tight">
+            <div class="font-semibold">Sanjay</div>
+            <div class="text-xs text-slate-600 dark:text-slate-400">Automotive & Electrical Systems</div>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-6 text-sm">
+          <a class="hover:text-slate-600 dark:hover:text-slate-300" href="#about">About</a>
+          <a class="hover:text-slate-600 dark:hover:text-slate-300" href="#skills">Skills</a>
+          <a class="hover:text-slate-600 dark:hover:text-slate-300" href="#experience">Experience</a>
+          <a class="hover:text-slate-600 dark:hover:text-slate-300" href="#projects">Projects</a>
+          <a class="hover:text-slate-600 dark:hover:text-slate-300" href="#contact">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a
+            href="./Resume_2.pdf"
+            class="hidden sm:inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium border border-slate-300 bg-white hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+            title="Place your resume PDF next to this index.html as Resume_2.pdf"
+          >
+            Resume
+          </a>
+
+          <button
+            id="themeBtn"
+            class="inline-flex items-center justify-center rounded-xl px-3 py-2 text-sm font-medium border border-slate-300 bg-white hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+            aria-label="Toggle theme"
+          >
+            <span id="themeIcon" aria-hidden="true">🌙</span>
+          </button>
+
+          <button
+            id="menuBtn"
+            class="md:hidden inline-flex items-center justify-center rounded-xl px-3 py-2 text-sm font-medium border border-slate-300 bg-white hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200/60 dark:border-slate-800/60">
+        <div class="mx-auto max-w-6xl px-4 py-3 grid gap-2 text-sm">
+          <a class="py-2" href="#about">About</a>
+          <a class="py-2" href="#skills">Skills</a>
+          <a class="py-2" href="#experience">Experience</a>
+          <a class="py-2" href="#projects">Projects</a>
+          <a class="py-2" href="#contact">Contact</a>
+          <a class="py-2" href="./Resume_2.pdf">Resume</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main id="top" class="relative">
+      <section class="mx-auto max-w-6xl px-4 pt-14 pb-10">
+        <div class="grid md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-7">
+            <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700 shadow-soft dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
+              <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+              Open to internships / co-ops · Dearborn, MI
+            </div>
+
+            <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
+              Automotive Engineer building
+              <span class="text-slate-600 dark:text-slate-300">reliable electrical systems</span>
+              and
+              <span class="text-slate-600 dark:text-slate-300">intelligent mobility</span>.
+            </h1>
+
+            <p class="mt-4 text-base md:text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              I’m Sanjay (Sivasanjay Mambadi Nachimuthu). I work across vehicle diagnostics, wiring harness design,
+              controller calibration, and robotics autonomy — turning messy real-world constraints into systems that ship.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold bg-slate-900 text-white hover:opacity-90 shadow-soft dark:bg-white dark:text-slate-900"
+              >
+                View Projects
+              </a>
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold border border-slate-300 bg-white hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+              >
+                Contact
+              </a>
+              <a
+                href="https://www.linkedin.com/in/sivasanjay-m-n-196809190/"
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold border border-slate-300 bg-white hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+              >
+                LinkedIn ↗
+              </a>
+            </div>
+
+            <div class="mt-7 grid sm:grid-cols-3 gap-3">
+              <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+                <div class="text-sm font-semibold">Focus</div>
+                <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">Harnessing · CAN · Calibration · ROS</div>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+                <div class="text-sm font-semibold">Tooling</div>
+                <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">KiCad · RapidHarness · CANalyzer · MATLAB</div>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+                <div class="text-sm font-semibold">Strength</div>
+                <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">Root-cause · Validation · Reliability</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-5">
+            <div class="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft dark:border-slate-800 dark:bg-slate-900">
+              <div class="grain absolute inset-0 opacity-40 dark:opacity-20"></div>
+              <div class="relative p-7">
+                <div class="flex items-start gap-4">
+                  <div class="h-14 w-14 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 grid place-items-center font-bold text-lg">
+                    SN
+                  </div>
+                  <div>
+                    <div class="font-semibold text-lg">Sivasanjay Mambadi Nachimuthu</div>
+                    <div class="text-sm text-slate-600 dark:text-slate-300">Sanjay · Dearborn, MI</div>
+                    <div class="mt-2 flex flex-wrap gap-2 text-xs">
+                      <span class="rounded-full border border-slate-200 px-2 py-1 dark:border-slate-700">Automotive</span>
+                      <span class="rounded-full border border-slate-200 px-2 py-1 dark:border-slate-700">Electrical</span>
+                      <span class="rounded-full border border-slate-200 px-2 py-1 dark:border-slate-700">Robotics</span>
+                      <span class="rounded-full border border-slate-200 px-2 py-1 dark:border-slate-700">Validation</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-6 space-y-3 text-sm">
+                  <div class="flex justify-between gap-3">
+                    <span class="text-slate-600 dark:text-slate-400">Email</span>
+                    <a class="font-medium hover:underline" href="mailto:mnsiva@umich.edu">mnsiva@umich.edu</a>
+                  </div>
+                  <div class="flex justify-between gap-3">
+                    <span class="text-slate-600 dark:text-slate-400">Phone</span>
+                    <a class="font-medium hover:underline" href="tel:+13137276980">+1 (313) 727-6980</a>
+                  </div>
+                  <div class="flex justify-between gap-3">
+                    <span class="text-slate-600 dark:text-slate-400">Currently</span>
+                    <span class="font-medium">Electrical Engineer Intern · Intermode (Detroit)</span>
+                  </div>
+                  <div class="flex justify-between gap-3">
+                    <span class="text-slate-600 dark:text-slate-400">Studying</span>
+                    <span class="font-medium">M.S. Automotive & Intelligent Systems · UM-Dearborn</span>
+                  </div>
+                </div>
+
+                <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300">
+                  <div class="font-semibold text-slate-900 dark:text-slate-100">What I’m looking for</div>
+                  <p class="mt-1 leading-relaxed">
+                    Roles in electrical systems, validation, diagnostics, controls, or autonomy — where tight feedback loops and
+                    strong engineering fundamentals matter.
+                  </p>
+                </div>
+
+                <div class="mt-6 flex flex-wrap gap-3">
+                  <a
+                    class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-slate-900 text-white hover:opacity-90 shadow-soft dark:bg-white dark:text-slate-900"
+                    href="#contact"
+                  >
+                    Let’s talk
+                  </a>
+                  <a
+                    class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold border border-slate-300 bg-white hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+                    href="#projects"
+                  >
+                    Recent work
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <p class="mt-3 text-xs text-slate-500 dark:text-slate-400">
+              Tip: Add a headshot by replacing the initials card with an <code class="px-1">&lt;img&gt;</code> tag.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="mx-auto max-w-6xl px-4 py-10 reveal">
+        <div class="grid md:grid-cols-12 gap-6">
+          <div class="md:col-span-4">
+            <h2 class="text-2xl font-semibold">About</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-300">
+              I blend hands-on automotive service experience with electrical design and robotics software to build systems
+              that are diagnosable, testable, and reliable.
+            </p>
+          </div>
+          <div class="md:col-span-8">
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <div class="text-sm font-semibold">What I do</div>
+                  <ul class="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                    <li>• Wiring harness design, test, and documentation</li>
+                    <li>• Vehicle diagnostics & CAN tooling</li>
+                    <li>• Motor controller calibration & efficiency tuning</li>
+                    <li>• ROS-based localization, mapping, and autonomy</li>
+                  </ul>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold">What I value</div>
+                  <ul class="mt-2 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                    <li>• Clear requirements and test plans</li>
+                    <li>• Root-cause analysis and clean documentation</li>
+                    <li>• Simple designs that survive production realities</li>
+                    <li>• Fast feedback loops with measurable outcomes</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700 dark:bg-slate-950 dark:text-slate-300">Powertrain</span>
+                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700 dark:bg-slate-950 dark:text-slate-300">Braking & Suspension</span>
+                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700 dark:bg-slate-950 dark:text-slate-300">ADAS fundamentals</span>
+                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700 dark:bg-slate-950 dark:text-slate-300">Validation</span>
+                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700 dark:bg-slate-950 dark:text-slate-300">Reliability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="mx-auto max-w-6xl px-4 py-10 reveal">
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-semibold">Skills</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-300">A snapshot of tools and domains I use day-to-day.</p>
+          </div>
+        </div>
+
+        <div class="mt-6 grid md:grid-cols-2 gap-5">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="text-sm font-semibold">Engineering & Simulation</div>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="pill">SolidWorks</span><span class="pill">CATIA</span><span class="pill">AutoCAD</span><span class="pill">ANSYS</span>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="text-sm font-semibold">Electrical</div>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="pill">KiCad</span><span class="pill">RapidHarness</span><span class="pill">Simulink</span>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="text-sm font-semibold">Diagnostics & CAN</div>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="pill">CANalyzer</span><span class="pill">PCAN</span><span class="pill">OBD-II</span><span class="pill">Launch</span><span class="pill">Autel</span>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="text-sm font-semibold">Programming & Data</div>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="pill">Python</span><span class="pill">MATLAB</span><span class="pill">Excel (VBA)</span><span class="pill">C</span><span class="pill">ROS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="mx-auto max-w-6xl px-4 py-10 reveal">
+        <h2 class="text-2xl font-semibold">Experience</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Selected roles and impact.</p>
+
+        <div class="mt-6 grid gap-5">
+          <!-- Intermode -->
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+              <div>
+                <div class="font-semibold">Electrical Engineer Intern · Intermode</div>
+                <div class="text-sm text-slate-600 dark:text-slate-300">Detroit, MI</div>
+              </div>
+              <div class="text-sm text-slate-600 dark:text-slate-300">Jul 2025 – Present</div>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <li>• Designed and developed wiring harnesses for prototype and production systems with manufacturability in mind.</li>
+              <li>• Built test/validation checks to verify electrical performance and design compliance.</li>
+              <li>• Calibrated motor controllers to improve drive performance and efficiency.</li>
+              <li>• Maintained schematics and documentation in KiCad; supported cross-team troubleshooting.</li>
+            </ul>
+          </article>
+
+          <!-- KR Automobiles -->
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+              <div>
+                <div class="font-semibold">Senior Automotive Engineer · K R Automobiles</div>
+                <div class="text-sm text-slate-600 dark:text-slate-300">Coimbatore, India</div>
+              </div>
+              <div class="text-sm text-slate-600 dark:text-slate-300">May 2022 – Jan 2024</div>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <li>• Mentored trainees in diagnostics, mechanical servicing, and system overhauls.</li>
+              <li>• Introduced workflow improvements that reduced turnaround time by <b>20%</b>.</li>
+              <li>• Performed root-cause analysis on recurring issues, reducing repeat service cases by <b>15%</b>.</li>
+              <li>• Improved safety and quality compliance through standardized procedures.</li>
+            </ul>
+          </article>
+
+          <!-- Ambal Autos -->
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+              <div>
+                <div class="font-semibold">Junior Automotive Engineer Intern · Ambal Autos</div>
+                <div class="text-sm text-slate-600 dark:text-slate-300">Coimbatore, India</div>
+              </div>
+              <div class="text-sm text-slate-600 dark:text-slate-300">Jun 2021 – Apr 2022</div>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+              <li>• Conducted inspections, diagnostics, and warranty repairs per manufacturer guidelines.</li>
+              <li>• Supported high-volume service operations while maintaining quality and customer communication.</li>
+              <li>• Used OBD-II tools to identify and troubleshoot engine and system faults.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="mx-auto max-w-6xl px-4 py-10 reveal">
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-semibold">Projects</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-300">A few builds that show how I think and execute.</p>
+          </div>
+        </div>
+
+        <div class="mt-6 grid md:grid-cols-2 gap-5">
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="font-semibold">Technology & Validation Planning — 2030 Sedan</div>
+                <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">Hybrid systems integration · EPA cycles · Competitor benchmarking</div>
+              </div>
+              <span class="text-xs rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-950">2025</span>
+            </div>
+            <p class="mt-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              Built a technology + validation plan for a next-gen hybrid sedan: powertrain + energy management, adaptive suspension,
+              and a test strategy using FTP-75/HWFET plus real-world drive assessments.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="font-semibold">Localization & Mapping Optimization (ROS + LiDAR)</div>
+                <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">Normal Distribution Transform (NDT) · Parameter tuning · RViz stability</div>
+              </div>
+              <span class="text-xs rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-950">2024</span>
+            </div>
+            <p class="mt-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              Implemented LiDAR-based localization/mapping and tuned voxel size, step size, and convergence thresholds to improve
+              accuracy and runtime; resolved ROS/RViz integration issues for robust visualization.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="font-semibold">GreenBot — Autonomous Electric Lawn Mower</div>
+                <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">Multi-sensor perception · SLAM · Path planning · Safety architecture</div>
+              </div>
+              <span class="text-xs rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-950">2024</span>
+            </div>
+            <p class="mt-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              Proposed a Level 2 autonomous mower with camera/radar/ultrasonic/GPS/IMU sensing, SLAM localization,
+              and simulated validation in ROS + MATLAB/Simulink + Gazebo.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="font-semibold">Service Workflow Standardization</div>
+                <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">Time-motion study · Checklists · Bay layout optimization</div>
+              </div>
+              <span class="text-xs rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-950">2023</span>
+            </div>
+            <p class="mt-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              Streamlined service operations through standardized checklists and layout improvements, reducing average
+              service time by <b>22%</b> and improving documentation consistency.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="font-semibold">Brake Diagnostics Process Improvement (ABS Vehicles)</div>
+                <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">OBD-II diagnostics · Sensor fault isolation · Technician checklist</div>
+              </div>
+              <span class="text-xs rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-950">2022</span>
+            </div>
+            <p class="mt-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              Standardized inspection procedures and created a diagnostic checklist; improved diagnostic accuracy and reduced
+              brake-related callbacks by <b>15%</b>.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="font-semibold">Hybrid Friction Stir Welding of Aluminum Alloy</div>
+                <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">Mechanical testing · ANSYS analysis · Lightweight structures</div>
+              </div>
+              <span class="text-xs rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-950">2021</span>
+            </div>
+            <p class="mt-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              Studied hybrid friction stir welding for dissimilar aluminum alloys and validated ~<b>12%</b> strength improvement
+              through testing and simulation.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="font-semibold">Formula SAE Electric Vehicle — Powertrain Integration</div>
+                <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">Drivetrain architecture · Harness · Battery integration · Control tuning</div>
+              </div>
+              <span class="text-xs rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-950">2020</span>
+            </div>
+            <p class="mt-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              Led EV powertrain integration: component selection, harness design, battery integration, and calibration.
+              Served as primary driver during testing, closing the loop with data-driven tuning.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="font-semibold">Hydraulic Paddle Shifter for FSAE</div>
+                <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">Hydraulic actuation · ECU synchronization · Ergonomics</div>
+              </div>
+              <span class="text-xs rounded-full bg-slate-100 px-3 py-1 dark:bg-slate-950">2020</span>
+            </div>
+            <p class="mt-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              Designed and fabricated a steering-mounted paddle shift system using a hydraulic actuator + DCV,
+              improving shift response and lap consistency.
+            </p>
+          </article>
+        </div>
+
+        <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+          <div class="text-sm font-semibold">Want to add proof?</div>
+          <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">
+            Add links to GitHub, papers, demo videos, or photos inside each card. I can also convert this section to a filterable
+            project gallery (by category: Automotive / Electrical / Robotics).
+          </p>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="mx-auto max-w-6xl px-4 py-10 reveal">
+        <h2 class="text-2xl font-semibold">Education</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-5">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="font-semibold">University of Michigan — Dearborn</div>
+            <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">M.S. Automotive & Intelligent Systems · CGPA 3.6/4.0</div>
+            <div class="mt-2 text-sm text-slate-600 dark:text-slate-300">Sept 2024 – Present</div>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+            <div class="font-semibold">Bannari Amman Institute of Technology</div>
+            <div class="mt-1 text-sm text-slate-600 dark:text-slate-300">B.E. Automobile Engineering · CGPA 8.2/10</div>
+            <div class="mt-2 text-sm text-slate-600 dark:text-slate-300">2018 – 2021</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="mx-auto max-w-6xl px-4 py-12 reveal">
+        <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+          <div class="grid md:grid-cols-12 gap-8">
+            <div class="md:col-span-6">
+              <h2 class="text-2xl font-semibold">Contact</h2>
+              <p class="mt-2 text-slate-600 dark:text-slate-300">
+                If you’re hiring for electrical systems, validation, diagnostics, controls, or autonomy — I’d love to chat.
+              </p>
+
+              <div class="mt-5 space-y-3 text-sm">
+                <div class="flex items-center justify-between gap-3">
+                  <span class="text-slate-600 dark:text-slate-400">Email</span>
+                  <a class="font-semibold hover:underline" href="mailto:mnsiva@umich.edu">mnsiva@umich.edu</a>
+                </div>
+                <div class="flex items-center justify-between gap-3">
+                  <span class="text-slate-600 dark:text-slate-400">Phone</span>
+                  <a class="font-semibold hover:underline" href="tel:+13137276980">+1 (313) 727-6980</a>
+                </div>
+                <div class="flex items-center justify-between gap-3">
+                  <span class="text-slate-600 dark:text-slate-400">LinkedIn</span>
+                  <a class="font-semibold hover:underline" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/sivasanjay-m-n-196809190/">Profile ↗</a>
+                </div>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a
+                  class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold bg-slate-900 text-white hover:opacity-90 shadow-soft dark:bg-white dark:text-slate-900"
+                  href="mailto:mnsiva@umich.edu?subject=Portfolio%20Inquiry&body=Hi%20Sanjay%2C%0A%0A"
+                >
+                  Email me
+                </a>
+                <a
+                  class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold border border-slate-300 bg-white hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+                  href="./Resume_2.pdf"
+                >
+                  Download resume
+                </a>
+              </div>
+            </div>
+
+            <div class="md:col-span-6">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-800 dark:bg-slate-950">
+                <div class="text-sm font-semibold">Quick message (opens your email app)</div>
+                <form class="mt-4 grid gap-3" onsubmit="return sendEmail(event)">
+                  <label class="grid gap-1">
+                    <span class="text-xs text-slate-600 dark:text-slate-400">Your name</span>
+                    <input id="name" class="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900" placeholder="Jane Recruiter" required />
+                  </label>
+                  <label class="grid gap-1">
+                    <span class="text-xs text-slate-600 dark:text-slate-400">Your email</span>
+                    <input id="email" type="email" class="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900" placeholder="jane@company.com" required />
+                  </label>
+                  <label class="grid gap-1">
+                    <span class="text-xs text-slate-600 dark:text-slate-400">Message</span>
+                    <textarea id="message" rows="4" class="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900" placeholder="Hi Sanjay — let's talk about..." required></textarea>
+                  </label>
+                  <button class="rounded-xl px-4 py-2 text-sm font-semibold bg-slate-900 text-white hover:opacity-90 dark:bg-white dark:text-slate-900">Send</button>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">No backend needed — uses <code class="px-1">mailto:</code>.</p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="border-t border-slate-200 py-10 dark:border-slate-800">
+        <div class="mx-auto max-w-6xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-sm text-slate-600 dark:text-slate-400">© <span id="year"></span> Sanjay Mambadi Nachimuthu</div>
+          <div class="text-sm text-slate-600 dark:text-slate-400">Built with HTML + Tailwind · Hosted on GitHub Pages</div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      // ----- Theme toggle (dark / light) -----
+      const root = document.documentElement;
+      const themeBtn = document.getElementById("themeBtn");
+      const themeIcon = document.getElementById("themeIcon");
+
+      function setTheme(mode) {
+        if (mode === "dark") {
+          root.classList.add("dark");
+          themeIcon.textContent = "☀️";
+        } else {
+          root.classList.remove("dark");
+          themeIcon.textContent = "🌙";
+        }
+        localStorage.setItem("theme", mode);
+      }
+
+      const saved = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setTheme(saved || (prefersDark ? "dark" : "light"));
+
+      themeBtn.addEventListener("click", () => {
+        const isDark = root.classList.contains("dark");
+        setTheme(isDark ? "light" : "dark");
+      });
+
+      // ----- Mobile menu -----
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+      mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => mobileMenu.classList.add("hidden")));
+
+      // ----- Pills styling helper -----
+      document.querySelectorAll(".pill").forEach((el) => {
+        el.className =
+          "pill rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300";
+      });
+
+      // ----- Reveal on scroll -----
+      const revealEls = document.querySelectorAll(".reveal");
+      revealEls.forEach((el) => {
+        el.style.opacity = 0;
+        el.style.transform = "translateY(12px)";
+        el.style.transition = "opacity 700ms ease, transform 700ms ease";
+      });
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.style.opacity = 1;
+              e.target.style.transform = "translateY(0px)";
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      revealEls.forEach((el) => io.observe(el));
+
+      // ----- Mailto form -----
+      function sendEmail(e) {
+        e.preventDefault();
+        const name = encodeURIComponent(document.getElementById("name").value.trim());
+        const email = encodeURIComponent(document.getElementById("email").value.trim());
+        const message = encodeURIComponent(document.getElementById("message").value.trim());
+
+        const subject = encodeURIComponent(`Portfolio Inquiry — ${decodeURIComponent(name)}`);
+        const body = encodeURIComponent(`Hi Sanjay,\n\n${decodeURIComponent(message)}\n\n— ${decodeURIComponent(name)} (${decodeURIComponent(email)})`);
+        window.location.href = `mailto:mnsiva@umich.edu?subject=${subject}&body=${body}`;
+        return false;
+      }
+
+      // Footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
